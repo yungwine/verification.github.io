@@ -5,17 +5,17 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
-function() {
-    function str_rand() {
-        var result       = '';
-        var words        = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
-        var max_position = words.length - 1;
-            for( i = 0; i < 5; ++i ) {
-                position = Math.floor ( Math.random() * max_position );
-                result = result + words.substring(position, position + 1);
-            }
-        return result;
-    }
+//function() {
+//    function str_rand() {
+//        var result       = '';
+//        var words        = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+//        var max_position = words.length - 1;
+//            for( i = 0; i < 5; ++i ) {
+//                position = Math.floor ( Math.random() * max_position );
+//                result = result + words.substring(position, position + 1);
+//            }
+//        return result;
+//    }
 
 let item = "";
 
