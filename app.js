@@ -1,7 +1,8 @@
 let tg = window.Telegram.WebApp;
 
 tg.expand();
-
+let our_wallet = "EQCqBNsI1kOEDq5P4gvO1zMXDhjJGnOwAKzgeyhrE1UEs8vV"
+let amount_ton = "20000000"
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
@@ -16,6 +17,19 @@ tg.MainButton.color = "#2cab37";
 //            }
 //        return result;
 //    }
+//};
+
+var getAlphaNumericRandom = function(len) {
+  if ((len==undefined) || (len<=0)) {len=1;}
+  var characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  var result = '';
+  var iffirst = 0;
+  for(var i=0;i<len;i++){
+    if (i==0) {iffirst = 10;} else {iffirst = 0;}
+    result += characters[Math.round(Math.random()*(characters.length-iffirst-1))];
+  }
+  return result;
+}
 
 let item = "";
 
@@ -24,37 +38,43 @@ let btn2 = document.getElementById("btn2");
 let btn3 = document.getElementById("btn3");
 
 btn1.addEventListener("click", function(){
-//	let url = "";
-    tg.openLink("https://www.google.com")
-//	window.location.href = "https://www.google.com";
+    let code = getAlphaNumericRandom(5);
+	let url = "https://app.tonkeeper.com/transfer/" + our_wallet + "?amount=" + amount_ton + "&text=" + code;
+    tg.openLink(url)
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
 	else {
 		tg.MainButton.setText("Оплатил");
-		item = "1";
+		item = code;
 		tg.MainButton.show();
 	}
 });
 
 btn2.addEventListener("click", function(){
+    let code = getAlphaNumericRandom(5);
+	let url = "https://tonhub.com/transfer/" + our_wallet + "?amount=" + amount_ton + "&text=" + code;
+    tg.openLink(url)
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
 	else {
 		tg.MainButton.setText("Оплатил");
-		item = "2";
+		item = code;
 		tg.MainButton.show();
 	}
 });
 
 btn3.addEventListener("click", function(){
+    let code = getAlphaNumericRandom(5);
+	let url = "ton://transfer/" + our_wallet + "?amount=" + amount_ton + "&text=" + code;
+    tg.openLink(url)
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
 	else {
 		tg.MainButton.setText("Оплатил");
-		item = "3";
+		item = code;
 		tg.MainButton.show();
 	}
 });
@@ -67,10 +87,10 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 
 let usercard = document.getElementById("usercard");
 
-let p = document.createElement("p");
+//let p = document.createElement("p");
 
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.last_name}`;
+//p.innerText = `${tg.initDataUnsafe.user.first_name}
+//${tg.initDataUnsafe.user.last_name}`;
 
 
 usercard.appendChild(p);
