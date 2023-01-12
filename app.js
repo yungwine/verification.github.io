@@ -25,7 +25,8 @@ let btn3 = document.getElementById("btn3");
 
 btn1.addEventListener("click", function(){
 //	let url = "";
-	window.location.href = "https://www.google.com";
+    tg.openLink("https://www.google.com")
+//	window.location.href = "https://www.google.com";
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
