@@ -4,6 +4,14 @@ body {
 	font-size: 18px;
 	color: var(--tg-theme-text-color);
 	background: var(--tg-theme-bg-color);
+	button: --tg-theme-button-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hint{
+	color: var(--tg-theme-hint-color);
 }
 
 .container {
@@ -34,15 +42,17 @@ font-size: 17px;
 */
 
 .btn {
+    background: var(--tg-theme-button-color);
+	color: var(--tg-theme-button-text-color);
+	border: none;
+	font-size: 18px;
     display: inline-flex;
     align-items: center;
 	padding: 10px 100px;
     vertical-align: middle;
     padding-left: 20px;
 	border: none;
-	background: rgb(128, 128, 128);
 	border-radius: 10px;
-	color: #ffffff;
 	font-weight: 400;
 	font-size: 14px;
 	transition: background .2s linear;
@@ -59,11 +69,11 @@ font-size: 17px;
 	text-align: center;
 }
 
-/*
-var(--tg-theme-bg-color)
+
+/* var(--tg-theme-bg-color)
 var(--tg-theme-text-color)
 var(--tg-theme-hint-color)
 var(--tg-theme-link-color)
 var(--tg-theme-button-color)
 var(--tg-theme-button-text-color)
-*/
+ */
